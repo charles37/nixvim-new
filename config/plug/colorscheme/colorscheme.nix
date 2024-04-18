@@ -56,23 +56,21 @@ in {
       style = "moon"; #  "main", "moon", "dawn" or raw lua code
       #disableItalics = false;
       #transparentFloat = false;
-      settings = {
-        italics.enable = true;
-        transparentBackground = true;
-        highlightGroups = {
-          NormalFloat.enable = true;
-          TelescopeNormal = {
-            bg = lua "require('rose-pine.palette').base";
-            fg = lua "require('rose-pine.palette').surface";
-          };
-          TelescopeBorder = {
-            bg = lua "require('rose-pine.palette').base";
-            fg = lua "require('rose-pine.palette').surface";
-          };
-          TelescopePreviewTitle = {
-            bg = lua "require('rose-pine.palette').base";
-            fg = lua "require('rose-pine.palette').surface";
-          };
+      italics.enable = true;
+      transparentBackground = true;
+      highlightGroups = {
+        NormalFloat.enable = true;
+        TelescopeNormal = {
+          bg = lua "require('rose-pine.palette').base";
+          fg = lua "require('rose-pine.palette').surface";
+        };
+        TelescopeBorder = {
+          bg = lua "require('rose-pine.palette').base";
+          fg = lua "require('rose-pine.palette').surface";
+        };
+        TelescopePreviewTitle = {
+          bg = lua "require('rose-pine.palette').base";
+          fg = lua "require('rose-pine.palette').surface";
         };
       };
     };

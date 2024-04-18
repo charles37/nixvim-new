@@ -26,7 +26,7 @@
           desc = "Find project files";
         };
       };
-      "<leader>/" = {
+      "<leader>ps" = {
         action = "live_grep";
         options = {
           desc = "Grep (root dir)";
@@ -44,13 +44,13 @@
           desc = "+buffer";
         };
       };
-      "<leader>ff" = {
+      "<leader>pf" = {
         action = "find_files, {}";
         options = {
           desc = "Find project files";
         };
       };
-      "<leader>fr" = {
+      "<leader>ps" = {
         action = "live_grep, {}";
         options = {
           desc = "Find text";

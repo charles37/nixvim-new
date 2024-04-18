@@ -54,10 +54,14 @@ in {
     rose-pine = {
       enable = false;
       style = "moon"; #  "main", "moon", "dawn" or raw lua code
-      disableItalics = false;
-      transparentFloat = false;
+      #disableItalics = false;
+      #transparentFloat = false;
+      settings = {
+        italics.enable = true;
+      };
       transparentBackground = true;
       highlightGroups = {
+        NormalFloat = enable;
         TelescopeNormal = {
           bg = lua "require('rose-pine.palette').base";
           fg = lua "require('rose-pine.palette').surface";

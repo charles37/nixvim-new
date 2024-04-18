@@ -58,21 +58,21 @@ in {
       #transparentFloat = false;
       settings = {
         italics.enable = true;
-      };
-      transparentBackground = true;
-      highlightGroups = {
-        NormalFloat = enable;
-        TelescopeNormal = {
-          bg = lua "require('rose-pine.palette').base";
-          fg = lua "require('rose-pine.palette').surface";
-        };
-        TelescopeBorder = {
-          bg = lua "require('rose-pine.palette').base";
-          fg = lua "require('rose-pine.palette').surface";
-        };
-        TelescopePreviewTitle = {
-          bg = lua "require('rose-pine.palette').base";
-          fg = lua "require('rose-pine.palette').surface";
+        transparentBackground = true;
+        highlightGroups = {
+          NormalFloat = enable;
+          TelescopeNormal = {
+            bg = lua "require('rose-pine.palette').base";
+            fg = lua "require('rose-pine.palette').surface";
+          };
+          TelescopeBorder = {
+            bg = lua "require('rose-pine.palette').base";
+            fg = lua "require('rose-pine.palette').surface";
+          };
+          TelescopePreviewTitle = {
+            bg = lua "require('rose-pine.palette').base";
+            fg = lua "require('rose-pine.palette').surface";
+          };
         };
       };
     };

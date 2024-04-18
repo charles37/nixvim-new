@@ -56,7 +56,7 @@ in {
       style = "moon"; #  "main", "moon", "dawn" or raw lua code
       #disableItalics = false;
       #transparentFloat = false;
-      italics.enable = true;
+      #italics.enable = true;
       transparentBackground = true;
       highlightGroups = {
         NormalFloat.enable = true;

@@ -50,7 +50,7 @@
           desc = "Find project files";
         };
       };
-      "<leader>ps" = {
+      "<leader>pr" = {
         action = "live_grep, {}";
         options = {
           desc = "Find text";

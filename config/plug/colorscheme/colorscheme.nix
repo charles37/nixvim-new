@@ -60,7 +60,7 @@ in {
         italics.enable = true;
         transparentBackground = true;
         highlightGroups = {
-          NormalFloat = enable;
+          NormalFloat.enable = true;
           TelescopeNormal = {
             bg = lua "require('rose-pine.palette').base";
             fg = lua "require('rose-pine.palette').surface";

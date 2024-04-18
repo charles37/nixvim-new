@@ -378,6 +378,11 @@
       action = "<CMD> Grapple select index=4<CR>";
       options = {desc = "Grapple Select 4";};
     }
+    {
+      mode = "n";
+      key = "<leader>pv";
+      action = ":Ex<CR>";
+    }
   ];
   extraConfigLua = ''
     function ToggleLineNumber()

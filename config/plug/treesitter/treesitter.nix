@@ -11,7 +11,7 @@
   };
   mlir-grammar = pkgs.tree-sitter.buildGrammar {
     language = "mlir";
-    version = "";
+    version = "0.0.0+rev=ab7708c";
     src = pkgs.fetchFromGitHub {
       owner = "artagnon";
       repo = "tree-sitter-mlir";

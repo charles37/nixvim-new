@@ -9,20 +9,39 @@
       hash = "sha256-A0Lpsx0VFRYUWetgX3Bn5osCsLQrZzg90unGg9kTnVg=";
     };
   };
+  mlir-grammar = pkgs.tree-sitter.buildGrammar {
+    language = "mlir";
+    version = "";
+    src = pkgs.fetchFromGitHub {
+      owner = "artagnon";
+      repo = "tree-sitter-mlir";
+      rev = "ab7708c4aed1ff0919d6f6fd3e463fe75ba645be";
+      hash = "sha256-OFhnAvbQOI5t4suRxCSlJ6Gya9wG9Uqb5F649fKhKAQ=";
+    };
+  };
 in {
-  filetype.extension.liq = "liquidsoap";
-  filetype.extension.nu = "nu";
+  filetype = {
+    extension = {
+      liq = "liquidsoap";
+      nu = "nu";
+      mlir = "mlir";
+    };
+  };
 
   plugins.treesitter = {
     enable = true;
     indent = true;
     folding = true;
-    languageRegister.nu = "nu";
-    languageRegister.liq = "liquidsoap";
+    languageRegister = {
+      nu = "nu";
+      liq = "liquidsoap";
+      mlir = "mlir";
+    };
     nixvimInjections = true;
     grammarPackages =
       [
         nu-grammar
+        mlir-grammar
       ]
       ++ pkgs.vimPlugins.nvim-treesitter.allGrammars;
   };
@@ -30,6 +49,8 @@ in {
   extraFiles = {
     "/queries/nu/highlights.scm" = builtins.readFile "${nu-grammar}/queries/nu/highlights.scm";
     "/queries/nu/injections.scm" = builtins.readFile "${nu-grammar}/queries/nu/injections.scm";
+    "/queries/highlights.scm" = builtins.readFile "${mlir-grammar}/queries/highlights.scm";
+    "/queries/locals.scm" = builtins.readFile "${mlir-grammar}/queries/locals.scm";
   };
   extraConfigLua = ''
     local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
@@ -40,5 +61,9 @@ in {
     parser_config.nu = {
       filetype = "nu",
     }
+    parser_config.mlir = {
+      filetype = "mlir",
+    }
+
   '';
 }

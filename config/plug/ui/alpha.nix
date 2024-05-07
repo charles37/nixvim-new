@@ -13,7 +13,7 @@
       "    ░  ░    ░  ░░ ░               ░  ░  ░ "
       "                ░ ░                       "
       "                                          "
-      "           git@github.com:elythh          "
+      "           git@github.com:charles37"
     ];
   in {
     enable = true;
@@ -82,7 +82,7 @@
           position = "center";
         };
         type = "text";
-        val = "https://github.com/elythh/nixvim";
+        val = "https://github.com/charles37/nixvim-new";
       }
     ];
   };

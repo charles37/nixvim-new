@@ -14,10 +14,11 @@
         terraformls = {enable = true;};
         tsserver = {enable = true;};
         yamlls = {enable = true;};
+        hls = {enable = true;};
         rust-analyzer = {
           enable = true;
-          #installRustc = true;
-          #installCargo = true;
+          installRustc = true;
+          installCargo = true;
         };
       };
       keymaps = {

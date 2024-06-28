@@ -4,10 +4,10 @@
     lsp = {
       enable = true;
       servers = {
-        ccls = {
-          enable = true;
-          initOptions.clang.extraArgs = ["--gcc-toolchain=/usr"];
-        };
+        #Eccls = {
+        #E  enable = true;
+        #E  initOptions.clang.extraArgs = ["--gcc-toolchain=/usr"];
+        #E};
         eslint = {enable = true;};
         html = {enable = true;};
         lua-ls = {enable = true;};

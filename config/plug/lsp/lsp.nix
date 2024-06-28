@@ -6,7 +6,7 @@
       servers = {
         ccls = {
           enable = true;
-          extraArgs = ["--gcc-toolchain=/usr"];
+          initOptions.clang.extraArgs = ["--gcc-toolchain=/usr"];
         };
         eslint = {enable = true;};
         html = {enable = true;};

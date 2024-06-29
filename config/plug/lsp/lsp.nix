@@ -11,7 +11,10 @@
         #    "--offset-encoding=utf-16"
         #  ];
         #};
-        clangd = {enable = true;};
+        clangd = {
+          enable = true;
+          cmd = ["clangd" "--offset-encoding=utf-16"];
+        };
         eslint = {enable = true;};
         html = {enable = true;};
         lua-ls = {enable = true;};

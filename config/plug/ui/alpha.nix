@@ -61,7 +61,7 @@
           )
           (
             mkButton
-            "q"
+            "Q"
             "<CMD>qa<CR>"
             "💣 Quit Neovim"
             "String"

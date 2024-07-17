@@ -125,14 +125,14 @@
       };
     }
 
-    {
-      mode = "n";
-      key = "q";
-      action = "q";
-      options = {
-        desc = "Record macro";
-      };
-    }
+    #{
+    #  mode = "n";
+    #  key = "q";
+    #  action = "q";
+    #  options = {
+    #    desc = "Record macro";
+    #  };
+    #}
 
     {
       mode = "n";

@@ -124,16 +124,16 @@
         desc = "Split window right";
       };
     }
-
-    #{
-    #  mode = "n";
-    #  key = "q";
-    #  action = "q";
-    #  options = {
-    #    desc = "Record macro";
-    #  };
-    #}
-
+    {
+      mode = "n";
+      key = "q";
+      action = "q";
+      options = {
+        noremap = true;
+        silent = true;
+        desc = "Record macro";
+      };
+    }
     {
       mode = "n";
       key = "<C-h>";

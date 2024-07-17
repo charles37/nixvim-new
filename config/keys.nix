@@ -127,6 +127,15 @@
 
     {
       mode = "n";
+      key = "q";
+      action = "q";
+      options = {
+        desc = "Record macro";
+      };
+    }
+
+    {
+      mode = "n";
       key = "<C-h>";
       action = "<C-W>h";
       options = {

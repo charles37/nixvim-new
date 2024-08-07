@@ -33,24 +33,24 @@ in {
     indent = true;
     folding = true;
     languageRegister = {
-      nu = "nu";
+      #nu = "nu";
       liq = "liquidsoap";
-      mlir = "mlir";
+      #mlir = "mlir";
     };
     nixvimInjections = true;
     grammarPackages =
       [
-        nu-grammar
-        mlir-grammar
+        # nu-grammar
+        # mlir-grammar
       ]
       ++ pkgs.vimPlugins.nvim-treesitter.allGrammars;
   };
 
   extraFiles = {
-    "/queries/nu/highlights.scm" = builtins.readFile "${nu-grammar}/queries/nu/highlights.scm";
-    "/queries/nu/injections.scm" = builtins.readFile "${nu-grammar}/queries/nu/injections.scm";
-    "/queries/highlights.scm" = builtins.readFile "${mlir-grammar}/queries/highlights.scm";
-    "/queries/locals.scm" = builtins.readFile "${mlir-grammar}/queries/locals.scm";
+    # "/queries/nu/highlights.scm" = builtins.readFile "${nu-grammar}/queries/nu/highlights.scm";
+    # "/queries/nu/injections.scm" = builtins.readFile "${nu-grammar}/queries/nu/injections.scm";
+    # "/queries/highlights.scm" = builtins.readFile "${mlir-grammar}/queries/highlights.scm";
+    # "/queries/locals.scm" = builtins.readFile "${mlir-grammar}/queries/locals.scm";
   };
   extraConfigLua = ''
     local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
@@ -58,12 +58,13 @@ in {
     parser_config.liquidsoap = {
       filetype = "liquidsoap",
     }
-    parser_config.nu = {
-      filetype = "nu",
-    }
-    parser_config.mlir = {
-      filetype = "mlir",
-    }
+
 
   '';
+  # parser_config.nu = {
+  #   filetype = "nu",
+  # }
+  # parser_config.mlir = {
+  #   filetype = "mlir",
+  # }
 }

@@ -15,62 +15,68 @@ in {
     };
     tokyonight = {
       enable = false;
-      style = "night";
-      transparent = true;
-      onHighlights = ''
-        function(hl, c)
-            local prompt = "#2d3149"
-            hl.TelescopeNormal = {
-                bg = c.bg_dark,
-                fg = c.fg_dark,
-            }
-            hl.TelescopeBorder = {
-                bg = c.bg_dark,
-                fg = c.bg_dark,
-            }
-            hl.TelescopePromptNormal = {
-                bg = prompt,
-            }
-            hl.TelescopePromptBorder = {
-                bg = prompt,
-                fg = prompt,
-            }
-            hl.TelescopePromptTitle = {
-                bg = prompt,
-                fg = prompt,
-            }
-            hl.TelescopePreviewTitle = {
-                bg = c.bg_dark,
-                fg = c.bg_dark,
-            }
-            hl.TelescopeResultsTitle = {
-                bg = c.bg_dark,
-                fg = c.bg_dark,
-            }
-            end
-      '';
+      settings = {
+        on_highlights = ''
+          function(hl, c)
+              local prompt = "#2d3149"
+              hl.TelescopeNormal = {
+                  bg = c.bg_dark,
+                  fg = c.fg_dark,
+              }
+              hl.TelescopeBorder = {
+                  bg = c.bg_dark,
+                  fg = c.bg_dark,
+              }
+              hl.TelescopePromptNormal = {
+                  bg = prompt,
+              }
+              hl.TelescopePromptBorder = {
+                  bg = prompt,
+                  fg = prompt,
+              }
+              hl.TelescopePromptTitle = {
+                  bg = prompt,
+                  fg = prompt,
+              }
+              hl.TelescopePreviewTitle = {
+                  bg = c.bg_dark,
+                  fg = c.bg_dark,
+              }
+              hl.TelescopeResultsTitle = {
+                  bg = c.bg_dark,
+                  fg = c.bg_dark,
+              }
+              end
+        '';
+        style = "night";
+        transparent = true;
+      };
     };
     oxocarbon.enable = false;
     rose-pine = {
       enable = false;
-      style = "moon"; #  "main", "moon", "dawn" or raw lua code
+      #style = "moon"; #  "main", "moon", "dawn" or raw lua code
       #disableItalics = false;
       #transparentFloat = false;
       #italics.enable = true;
-      transparentBackground = true;
-      highlightGroups = {
-        NormalFloat.enable = true;
-        TelescopeNormal = {
-          bg = lua "require('rose-pine.palette').base";
-          fg = lua "require('rose-pine.palette').surface";
-        };
-        TelescopeBorder = {
-          bg = lua "require('rose-pine.palette').base";
-          fg = lua "require('rose-pine.palette').surface";
-        };
-        TelescopePreviewTitle = {
-          bg = lua "require('rose-pine.palette').base";
-          fg = lua "require('rose-pine.palette').surface";
+      settings = {
+        transparentBackground.enable = true;
+        dark_variant = true;
+
+        highlight_groups = {
+          NormalFloat.enable = true;
+          TelescopeNormal = {
+            bg = lua "require('rose-pine.palette').base";
+            fg = lua "require('rose-pine.palette').surface";
+          };
+          TelescopeBorder = {
+            bg = lua "require('rose-pine.palette').base";
+            fg = lua "require('rose-pine.palette').surface";
+          };
+          TelescopePreviewTitle = {
+            bg = lua "require('rose-pine.palette').base";
+            fg = lua "require('rose-pine.palette').surface";
+          };
         };
       };
     };

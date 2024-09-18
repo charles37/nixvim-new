@@ -24,7 +24,7 @@
         pyright = {enable = true;};
         gopls = {enable = true;};
         terraformls = {enable = true;};
-        tsserver = {enable = true;};
+        ts-ls = {enable = true;};
         yamlls = {enable = true;};
         hls = {enable = true;};
         rust-analyzer = {

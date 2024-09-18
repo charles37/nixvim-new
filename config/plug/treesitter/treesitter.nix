@@ -30,20 +30,22 @@ in {
 
   plugins.treesitter = {
     enable = true;
-    indent = true;
-    folding = true;
-    languageRegister = {
-      #nu = "nu";
-      liq = "liquidsoap";
-      #mlir = "mlir";
+    settings = {
+      indent.enable = true;
+      folding.enable = true;
+      languageRegister = {
+        #nu = "nu";
+        liq = "liquidsoap";
+        #mlir = "mlir";
+      };
+      nixvimInjections.enable = true;
+      grammarPackages =
+        [
+          # nu-grammar
+          # mlir-grammar
+        ]
+        ++ pkgs.vimPlugins.nvim-treesitter.allGrammars;
     };
-    nixvimInjections = true;
-    grammarPackages =
-      [
-        # nu-grammar
-        # mlir-grammar
-      ]
-      ++ pkgs.vimPlugins.nvim-treesitter.allGrammars;
   };
 
   extraFiles = {

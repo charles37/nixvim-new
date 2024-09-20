@@ -6,7 +6,9 @@ in {
       enable = true;
       settings = {
         options = {
-          separatorStyle = "thick"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin”
+          separator_style = "thick"; # "slant", "padded_slant", "slope", "padded_slope", "thick", "thin"
+          mode = "buffers";
+          themable = true;
         };
         highlights = {
           fill = {
@@ -17,29 +19,29 @@ in {
             fg = colors.base03;
             bg = colors.base00;
           };
-          bufferSelected = {
+          buffer_selected = {
             fg = colors.base05;
             bg = colors.base00;
+            bold = true;
             italic = false;
           };
-          bufferVisible = {
+          buffer_visible = {
             fg = colors.base03;
             bg = colors.base00;
           };
-          closeButton = {
+          close_button = {
             fg = colors.base03;
             bg = colors.base00;
           };
-          closeButtonVisible = {
+          close_button_visible = {
             fg = colors.base03;
             bg = colors.base00;
           };
-          closeButtonSelected = {
+          close_button_selected = {
             fg = colors.base08;
             bg = colors.base00;
           };
-
-          indicatorSelected = {
+          indicator_selected = {
             fg = colors.base00;
             bg = colors.base00;
           };
@@ -47,15 +49,15 @@ in {
             fg = colors.base03;
             bg = colors.base00;
           };
-          modifiedVisible = {
+          modified_visible = {
             fg = colors.base00;
             bg = colors.base00;
           };
-          modifiedSelected = {
+          modified_selected = {
             fg = colors.base0B;
             bg = colors.base00;
           };
-          tabClose = {
+          tab_close = {
             fg = colors.base00;
             bg = colors.base00;
           };
@@ -72,7 +74,6 @@ in {
         desc = "Cycle to next buffer";
       };
     }
-
     {
       mode = "n";
       key = "<S-Tab>";
@@ -81,7 +82,6 @@ in {
         desc = "Cycle to previous buffer";
       };
     }
-
     {
       mode = "n";
       key = "<S-l>";
@@ -90,7 +90,6 @@ in {
         desc = "Cycle to next buffer";
       };
     }
-
     {
       mode = "n";
       key = "<S-h>";
@@ -99,7 +98,6 @@ in {
         desc = "Cycle to previous buffer";
       };
     }
-
     {
       mode = "n";
       key = "<leader>bd";
@@ -108,7 +106,6 @@ in {
         desc = "Delete buffer";
       };
     }
-
     {
       mode = "n";
       key = "<leader>bb";
@@ -117,16 +114,6 @@ in {
         desc = "Switch to Other Buffer";
       };
     }
-
-    # {
-    #   mode = "n";
-    #   key = "<leader>`";
-    #   action = "<cmd>e #<cr>";
-    #   options = {
-    #     desc = "Switch to Other Buffer";
-    #   };
-    # }
-
     {
       mode = "n";
       key = "<leader>br";
@@ -135,7 +122,6 @@ in {
         desc = "Delete buffers to the right";
       };
     }
-
     {
       mode = "n";
       key = "<leader>bl";
@@ -144,7 +130,6 @@ in {
         desc = "Delete buffers to the left";
       };
     }
-
     {
       mode = "n";
       key = "<leader>bo";
@@ -153,7 +138,6 @@ in {
         desc = "Delete other buffers";
       };
     }
-
     {
       mode = "n";
       key = "<leader>bp";
@@ -162,7 +146,6 @@ in {
         desc = "Toggle pin";
       };
     }
-
     {
       mode = "n";
       key = "<leader>bP";

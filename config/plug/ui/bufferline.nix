@@ -5,7 +5,9 @@ in {
     bufferline = {
       enable = true;
       settings = {
-        separatorStyle = "thick"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin”
+        options = {
+          separatorStyle = "thick"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin”
+        };
         highlights = {
           fill = {
             fg = colors.base00;

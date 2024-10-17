@@ -41,15 +41,22 @@
     -- Create a user command to toggle format on save
     vim.api.nvim_create_user_command("ToggleFormatOnSave", toggle_format_on_save, {})
 
-    -- Override Conform's format_on_save function
+    -- Override Conform's setup to control format_on_save
     local conform = require("conform")
-    local original_format_on_save = conform.format_on_save
 
-    conform.format_on_save = function(bufnr)
-      if vim.g.format_on_save_enabled then
-        original_format_on_save(bufnr)
+    local original_setup = conform.setup
+    conform.setup = function(opts)
+      opts = opts or {}
+      opts.format_on_save = function(bufnr)
+        if vim.g.format_on_save_enabled then
+          conform.format({ bufnr = bufnr, lsp_fallback = true })
+        end
       end
+      original_setup(opts)
     end
+
+    -- Ensure the setup is called with our custom options
+    conform.setup({})
   '';
 
   keymaps = [

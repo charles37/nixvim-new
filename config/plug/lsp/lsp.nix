@@ -3,7 +3,7 @@
     lsp-format = {enable = true;};
     lsp = {
       enable = true;
-      inlayHints = true;
+      #inlayHints = true;
       servers = {
         #ccls = {
         #  enable = true;
@@ -32,36 +32,36 @@
           installRustc = true;
           installCargo = true;
           settings = {
-            inlayHints = {
-              bindingModeHints.enable = true;
-              chainingHints.enable = true;
-              closingBraceHints = {
-                enable = true;
-                minLines = 0;
-              };
-              closureCaptureHints.enable = true;
-              closureReturnTypeHints.enable = "always";
-              discriminantHints.enable = "always";
-              expressionAdjustmentHints = {
-                enable = "always";
-                hideOutsideUnsafe = false;
-                mode = "postfix";
-              };
-              lifetimeElisionHints = {
-                enable = "always";
-                useParameterNames = true;
-              };
-              maxLength = null; # No limit
-              parameterHints.enable = true;
-              rangeExclusiveHints.enable = true;
-              renderColons = true;
-              typeHints = {
-                enable = true;
-                hideClosureInitialization = false;
-                hideNamedConstructor = false;
-              };
-              implicitDrops.enable = true;
-            };
+            #inlayHints = {
+            #  bindingModeHints.enable = true;
+            #  chainingHints.enable = true;
+            #  closingBraceHints = {
+            #    enable = true;
+            #    minLines = 0;
+            #  };
+            #  closureCaptureHints.enable = true;
+            #  closureReturnTypeHints.enable = "always";
+            #  discriminantHints.enable = "always";
+            #  expressionAdjustmentHints = {
+            #    enable = "always";
+            #    hideOutsideUnsafe = false;
+            #    mode = "postfix";
+            #  };
+            #  lifetimeElisionHints = {
+            #    enable = "always";
+            #    useParameterNames = true;
+            #  };
+            #  maxLength = null; # No limit
+            #  parameterHints.enable = true;
+            #  rangeExclusiveHints.enable = true;
+            #  renderColons = true;
+            #  typeHints = {
+            #    enable = true;
+            #    hideClosureInitialization = false;
+            #    hideNamedConstructor = false;
+            #  };
+            #  implicitDrops.enable = true;
+            #};
             genericParameterHints = {
               const.enable = true;
               lifetime.enable = true;

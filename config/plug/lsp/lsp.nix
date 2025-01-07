@@ -27,6 +27,7 @@
         ts-ls = {enable = true;};
         yamlls = {enable = true;};
         hls = {enable = true;};
+        zls = {enable = true;};
         rust-analyzer = {
           enable = true;
           installRustc = true;

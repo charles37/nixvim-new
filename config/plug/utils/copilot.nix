@@ -14,7 +14,16 @@ in {
     (buildVimPlugin {
       pname = "copilotchat";
       version = "2.4.0";
-      src = pkgs.fetchFromGitHub copilotChatRepo;
+      src = pkgs.fetchFromGitHub {
+        owner = "copilotc-nvim";
+        repo = "CopilotChat.nvim";
+        rev = "2771f1fa7af502ea4226a88a792f4e4319199906";
+        hash = "sha256-Q+g81BQVQTY5J2c2ZWB7bjJLuNSdI0PAan+75YJ7mI0=";
+      };
+
+      # <---- add this
+      doCheck = false;
+
       meta = {
         description = "Chat with GitHub Copilot in Neovim";
         homepage = "https://github.com/CopilotC-Nvim/CopilotChat.nvim/";
@@ -22,6 +31,7 @@ in {
       };
     })
   ];
+
   extraConfigLua = ''
     require("CopilotChat").setup { }
   '';

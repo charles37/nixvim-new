@@ -2,10 +2,19 @@
   plugins.conform-nvim = {
     enable = true;
     settings = {
-      format_on_save = {
-        lspFallback = true;
-        timeoutMs = 500;
-      };
+      format_on_save = ''
+        function(bufnr)
+          if vim.g.format_on_save_enabled == nil then
+            vim.g.format_on_save_enabled = true
+          end
+          if vim.g.format_on_save_enabled then
+            return {
+              timeout_ms = 500,
+              lsp_fallback = true,
+            }
+          end
+        end
+      '';
       notifyOnError = true;
       formattersByFt = {
         liquidsoap = ["liquidsoap-prettier"];
@@ -25,9 +34,6 @@
   };
 
   extraConfigLua = ''
-    -- Initialize a variable to track the state
-    vim.g.format_on_save_enabled = true
-
     -- Function to toggle format on save
     local function toggle_format_on_save()
       vim.g.format_on_save_enabled = not vim.g.format_on_save_enabled
@@ -35,32 +41,25 @@
         vim.notify("Format on save enabled")
         -- Re-enable lsp-format
         require("lsp-format").enable()
+        -- Re-enable null-ls format on save if it was disabled
+        local null_ls_client = vim.lsp.get_active_clients({ name = "null-ls" })[1]
+        if null_ls_client then
+          null_ls_client.server_capabilities.documentFormattingProvider = true
+        end
       else
         vim.notify("Format on save disabled")
-        -- Disable lsp-format as well
+        -- Disable lsp-format
         require("lsp-format").disable()
+        -- Disable null-ls format on save
+        local null_ls_client = vim.lsp.get_active_clients({ name = "null-ls" })[1]
+        if null_ls_client then
+          null_ls_client.server_capabilities.documentFormattingProvider = false
+        end
       end
     end
 
     -- Create a user command to toggle format on save
     vim.api.nvim_create_user_command("ToggleFormatOnSave", toggle_format_on_save, {})
-
-    -- Override Conform's setup to control format_on_save
-    local conform = require("conform")
-
-    local original_setup = conform.setup
-    conform.setup = function(opts)
-      opts = opts or {}
-      opts.format_on_save = function(bufnr)
-        if vim.g.format_on_save_enabled then
-          conform.format({ bufnr = bufnr, lsp_fallback = true })
-        end
-      end
-      original_setup(opts)
-    end
-
-    -- Ensure the setup is called with our custom options
-    conform.setup({})
   '';
 
   keymaps = [

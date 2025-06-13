@@ -39,8 +39,8 @@
       vim.g.format_on_save_enabled = not vim.g.format_on_save_enabled
       if vim.g.format_on_save_enabled then
         vim.notify("Format on save enabled")
-        -- Re-enable lsp-format
-        require("lsp-format").enable()
+        -- Re-enable lsp-format for all buffers
+        require("lsp-format").enable({})
         -- Re-enable null-ls format on save if it was disabled
         local null_ls_client = vim.lsp.get_active_clients({ name = "null-ls" })[1]
         if null_ls_client then
@@ -48,8 +48,8 @@
         end
       else
         vim.notify("Format on save disabled")
-        -- Disable lsp-format
-        require("lsp-format").disable()
+        -- Disable lsp-format for all buffers
+        require("lsp-format").disable({})
         -- Disable null-ls format on save
         local null_ls_client = vim.lsp.get_active_clients({ name = "null-ls" })[1]
         if null_ls_client then

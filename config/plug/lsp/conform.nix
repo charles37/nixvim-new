@@ -33,8 +33,12 @@
       vim.g.format_on_save_enabled = not vim.g.format_on_save_enabled
       if vim.g.format_on_save_enabled then
         vim.notify("Format on save enabled")
+        -- Re-enable lsp-format
+        require("lsp-format").enable()
       else
         vim.notify("Format on save disabled")
+        -- Disable lsp-format as well
+        require("lsp-format").disable()
       end
     end
 
